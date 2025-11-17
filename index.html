@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金沢は今日も鳴雷（なるかみ）</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="lightning-flash"></div>
+
+    <div class="container">
+        <h1 class="title">金沢は今日も鳴雷</h1>
+
+        <div class="game-info">
+            <div class="round-timer">
+                <span class="label">次のラウンドまで</span>
+                <span class="timer" id="countdown">5:00</span>
+            </div>
+            <div class="score-display">
+                <span class="label">スコア</span>
+                <span class="score" id="score">1000</span>
+            </div>
+            <div class="bet-display">
+                <span class="label">ベット額</span>
+                <span class="bet" id="bet-amount">100</span>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <canvas id="map-canvas"></canvas>
+            <div id="grid-overlay"></div>
+        </div>
+
+        <div class="controls">
+            <div class="bet-controls">
+                <button class="bet-btn" data-amount="50">50pt</button>
+                <button class="bet-btn" data-amount="100">100pt</button>
+                <button class="bet-btn" data-amount="250">250pt</button>
+                <button class="bet-btn" data-amount="500">500pt</button>
+            </div>
+            <div class="action-controls">
+                <button id="confirm-bet" class="action-btn confirm" disabled>ベット確定</button>
+                <button id="clear-bet" class="action-btn clear">クリア</button>
+            </div>
+        </div>
+
+        <div class="odds-panel">
+            <h3>エリア別オッズ</h3>
+            <div id="odds-list"></div>
+        </div>
+
+        <div class="history-panel">
+            <h3>履歴</h3>
+            <div id="history-list"></div>
+        </div>
+    </div>
+
+    <div id="result-overlay" class="result-overlay hidden">
+        <div class="result-content">
+            <h2 id="result-title"></h2>
+            <p id="result-message"></p>
+            <p id="result-points"></p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
